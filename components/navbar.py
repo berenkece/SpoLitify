@@ -5,7 +5,6 @@ def navbarShow():
 
     with out2:
 
-        # create four equal columns and place one button in each so they appear side-by-side
         column1, column2, column3, column4 = st.columns(4)
 
         with column1:
@@ -28,7 +27,11 @@ def navbarShow():
                 st.session_state["page"] = "profile"
                 st.rerun()
 
-        st.divider()
+        # Use st.divider() when available (newer Streamlit); otherwise fall back to a horizontal rule
+        if hasattr(st, "divider"):
+            st.divider()
+        else:
+            st.markdown("---")
 
     
         

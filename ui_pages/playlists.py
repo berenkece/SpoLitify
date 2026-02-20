@@ -6,7 +6,8 @@ def playlists_page():
 
     if st.button("Home Page"):
         st.session_state["page"] = "home"
+        st.rerun()
         
-    elif st.button("Logout👋🏻"):
+    if st.button("Logout👋🏻"):
         st.session_state["page"] = "login"
         st.rerun()
